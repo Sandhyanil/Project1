@@ -10,7 +10,7 @@ pipeline {
             stage ('Compile') {  
                   steps{
                     bat label: '', script: 'mvnw compile'
-                    echo "test successful";
+                    echo "test successful"; 
                     
                 } 
             }
@@ -26,16 +26,19 @@ pipeline {
                   steps{
                     bat label: '', script: 'mvnw test'
                     echo "test successful";
+                    
                 } 
             }
             stage ('artifacts') {  
                   steps{
                     archieve 'target/*.war'
+                    
                  }
              }
            stage ('deploy') {  
                   steps{
                     bat '''copy C:\users\Parsh\.jenkins\workspace\My First Pipelie Project\target\*.war C:\Program Files\Apache Software Foundation\Tomcat 10.0\webapps\'''
+                    
                  }
              }
     }
