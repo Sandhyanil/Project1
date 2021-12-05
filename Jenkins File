@@ -30,12 +30,12 @@ pipeline {
             }
             stage ('artifacts') {  
                   steps{
-                    archieve 'target/* .jar*
+                    archieve 'target/*.war*
                  }
              }
            stage ('deploy') {  
                   steps{
-                    bat '''copy C:\\users\\Parsh\\.jenkins\\workspace\\My First Pipelie Project\\target\\* .jar C:\Program Files\Apache Software Foundation\Tomcat 10.0\webapps\\'''
+                    bat '''copy C:\\users\\Parsh\\.jenkins\\workspace\\My First Pipelie Project\\target\\*.war C:\Program Files\Apache Software Foundation\Tomcat 10.0\webapps\\'''
                  }
              }
     }
