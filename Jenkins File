@@ -30,7 +30,7 @@ pipeline {
             }
             stage ('artifacts') {  
                   steps{
-                    archieve 'target/*.war*
+                    archieve 'target/*.war'
                  }
              }
            stage ('deploy') {  
